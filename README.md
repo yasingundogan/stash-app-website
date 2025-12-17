@@ -32,6 +32,5 @@ The app provides real-time shop details, pricing, navigation, reviews, and reser
 - **SharedPreferences (local session)**
 - **Lottie animations**
 
----
 
 
