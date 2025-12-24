@@ -77,10 +77,23 @@
         }
 
         .logo {
-            font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 1.5rem;
+            background: #6b58e8;
+            border-radius: 24px;
+            box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+        }
+
+        .logo img {
+            width: clamp(180px, 28vw, 320px);
+            height: auto;
+            display: block;
         }
 
         .tagline {
@@ -114,9 +127,36 @@
             text-decoration: none;
         }
 
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button.download {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: none;
+        }
+
+        .cta-button.download:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #ffffff;
+        }
+
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .hero-video {
+            width: min(900px, 90vw);
+            margin: 1.5rem auto 2.5rem auto;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+            display: block;
         }
 
         .features {
@@ -695,6 +735,10 @@
                 font-size: 1rem;
             }
 
+            .cta-group {
+                flex-direction: column;
+            }
+
             .step-arrow {
                 display: none;
             }
@@ -721,14 +765,27 @@
 <body>
     <section class="hero">
         <div class="hero-content">
-            <div class="logo">🔒 STASH</div>
+            <div class="logo">
+                <div class="logo-badge">
+                    <img src="logosite.png" alt="Stash logo">
+                </div>
+            </div>
             <div class="tagline">Store Your Belongings Safely</div>
             <p class="description">
                 The smart way to securely store your belongings while traveling, studying, or exploring the city. Experience modern technology, flexible access, and complete insurance coverage.
             </p>
-            <button class="cta-button" onclick="document.querySelector('.how-it-works').scrollIntoView({behavior: 'smooth'})">
-                Discover →
-            </button>
+            <video class="hero-video" controls playsinline>
+                <source src="output3.mp4" type="video/mp4">
+                Tarayıcınız videoyu desteklemiyor.
+            </video>
+            <div class="cta-group">
+                <button class="cta-button" onclick="document.querySelector('.how-it-works').scrollIntoView({behavior: 'smooth'})">
+                    Discover →
+                </button>
+                <a class="cta-button download" href="https://github.com/EmreKa-0/stash_app" target="_blank" rel="noopener">
+                    Download Now
+                </a>
+            </div>
         </div>
     </section>
 
